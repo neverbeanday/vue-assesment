@@ -1,0 +1,886 @@
+@import "@/assets/scss/index.scss";
+
+@mixin home-title{
+  @include flexColumn-center;
+
+  font-size: 18px;
+  margin-bottom: 20px;
+
+  img{
+    width: 40px;
+    margin-bottom: 10px;
+  }
+
+  span{
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p{
+    margin: 0;
+  }
+}
+
+@mixin home-title-992{
+  font-size: 14px;
+  margin-bottom: 17px;
+
+  img{
+    width: 34px;
+    margin-bottom: 8px;
+  }
+
+  span{
+    margin-bottom: 6px;
+  }
+}
+
+@mixin input-feedback{
+  outline: 0;
+  border: 1px solid $backgroundColor-gray3;
+  border-radius: 4px;
+  height: 40px;
+  padding: 5px 14px;
+}
+
+.home{
+  #{&}__banner{
+    @include flexColumn-center;
+    height: 500px;
+    background-image: url(../../assets/images/backgroundImage-secondary.jpg), url(../../assets/images/backgroundImage-primary.jpg);
+    background-position: 115% -40px, 0% 0px;
+    background-size: 55%, 56%;
+    background-repeat: no-repeat, no-repeat;
+  
+    .home-banner-information{
+      @include flexColumn-left;
+      margin-left: -300px;
+      width: 300px;
+
+      &__text{
+        margin: 0 0 10px;
+        text-align: left;
+        font-size: 20px;
+
+        span{
+          font-weight: bold;
+          font-size: 25px;
+        }
+      }
+      &__button{
+        @include button-submit;
+      }
+    }
+  }
+  #{&}__login{
+    @include flexRow-center;
+    background-color: $backgroundColor-gray3;
+    padding: 40px 80px;
+
+    .home-login-title{
+      @include flexColumn-left;
+      font-size: 20px;
+      margin-right: 30px;
+
+      &__text{
+        margin: 0 0 2px;
+      }
+      span{
+        font-weight: bold;
+        font-size: 30px;
+      }
+    }
+    
+    .home-login-form{
+      input{
+        @include input-form;
+        margin: 10px;
+      }
+
+      button{
+        @include button-submit;
+        margin-left: 10px;
+      }
+    }
+  }
+  #{&}__discover{
+    @include flexColumn-center;
+    padding: 80px 300px;
+
+    .home-discover-title{
+      @include home-title
+    }
+
+    .home-discover-content{
+      @include flexColumn-center;
+
+      .home-discover-content-images{
+        margin-bottom: 30px;
+
+        img{
+          width: 500px;
+          border-radius: 10px;
+        }
+      }
+
+      .home-discover-content-tabs{
+        border-bottom: 1px solid $backgroundColor-gray3;
+        padding: 0 20px;
+        
+        button{
+          @include button;
+          background-color: $backgroundColor-white;
+          border: 0;
+          outline: 0;
+          padding: 10px 0;
+          margin: 0 20px;
+
+          &.active{
+            border-bottom: 6px solid $backgroundColor-blue;
+          }
+        }
+      }
+
+      .home-discover-content-text{
+        padding: 0 100px;
+        .home-discover-content-text-list{
+          p{
+            text-align: justify;
+          }
+        }
+      }
+    }
+  }
+  #{&}__feedback{
+    @include flexColumn-center;
+    background-color: $backgroundColor-gray;
+    padding: 80px 300px;
+
+    .home-feedback-title{
+      @include home-title
+    }
+
+    .home-feedback-form{
+      @include flexColumn-center;
+
+      &__search{
+        width: 85%;
+
+        input{
+          width: 100%;
+          height: 40px;
+          padding: 10px 30px 10px 50px;
+          outline: 0;
+          border: 0;
+          border-radius: 4px;
+          font-size: 15px;
+          background-image: url(../../assets/images/icon-search.png);
+          background-size: 30px 30px;
+          background-position: 10px;
+          background-repeat: no-repeat;
+        }
+      }
+
+      &__content{
+        @include flexRow;
+        margin-top: 40px;
+
+        .home-feedback-form-content-maps{
+          .vue-map-container{
+            width: 360px;
+            height: 360px;
+            margin: 0 auto;
+          }
+        }
+
+        .home-feedback-form-content-input{
+          background-color: $backgroundColor-white;
+          padding: 20px 20px 20px 40px;
+          &__list{
+            @include flexColumn-left;
+
+            p{
+              font-size: 24px;
+              font-weight: bold;
+            }
+
+            .home-feedback-form-content-input-list-group{
+              @include flexRow;
+
+              input:nth-child(1){
+                @include input-feedback;
+                width: 40%;
+                margin-right: 10px;
+              }
+
+              input:nth-child(2){
+                @include input-feedback;
+                width: 60%;
+              }
+            }
+
+            input{
+              @include input-feedback;
+              width: 100%;
+              margin-bottom: 10px;
+            }
+            textarea{
+              @include input-feedback;
+              width: 100%;
+              height: 80px;
+              padding: 10px 14px;
+              margin-bottom: 10px;
+            }
+            button{
+              @include button-submit;
+            }
+          }
+        }
+
+      }
+    }
+
+
+  }
+}
+
+
+@media screen and ( min-width: 1303px) and ( max-width: 1360px){
+  .home{
+    #{&}__banner{
+      height: 480px;
+      .home-banner-information{
+        margin-left: -290px;
+        width: 290px;
+      }
+    }
+  }
+}
+
+@media screen and ( min-width: 1240px) and ( max-width: 1303px){
+  .home{
+    #{&}__banner{
+      height: 450px;
+      .home-banner-information{
+        margin-left: -280px;
+        width: 286px;
+      }
+    }
+    #{&}__feedback{
+      padding: 80px 300px;
+  
+      .home-feedback-form{
+        &__search{
+          width: 95%;
+        }
+  
+        &__content{
+          margin-top: 30px;
+  
+          .home-feedback-form-content-maps{
+            .vue-map-container{
+              width: 300px;
+            }
+          }
+
+          .home-feedback-form-content-input{
+            padding: 10px 10px 10px 20px;
+          }
+  
+        }
+      }
+  
+  
+    }
+  }
+}
+
+@media screen and ( min-width: 1201px) and ( max-width: 1240px){
+  .home{
+    #{&}__banner{
+      height: 435px;
+      .home-banner-information{
+        margin-left: -240px;
+        width: 280px;
+        &__text{
+          font-size: 18px;
+          span{
+            font-size: 25px;
+          }
+        }
+      }
+    }
+    #{&}__feedback{  
+      .home-feedback-form{
+      
+        &__content{
+  
+          .home-feedback-form-content-maps{
+            .vue-map-container{
+              width: 290px;
+            }
+          }
+
+          .home-feedback-form-content-input{
+            padding: 10px 10px 10px 20px;
+            
+            &__list{
+  
+              p{
+                margin: 15px 0;
+              }
+  
+              .home-feedback-form-content-input-list-group{
+  
+                input:nth-child(1){
+                  height: 36px;
+                }
+  
+                input:nth-child(2){
+                  height: 36px;
+                }
+              }
+              input{
+                height: 36px;
+              }
+              
+            }
+          }
+  
+        }
+      }
+  
+  
+    }
+  }
+}
+
+
+@media screen and ( max-width: 992px) {
+  .home{
+    #{&}__banner{
+      height: 360px;
+      .home-banner-information{
+        margin-left: -200px;
+        width: 220px;
+  
+        &__text{
+          font-size: 18px;
+  
+          span{
+            font-weight: bold;
+            font-size: 22px;
+          }
+        }
+        &__button{
+          @include button-submit-992;
+        }
+      }
+    }
+    #{&}__login{
+      padding: 30px 50px;
+  
+      .home-login-title{
+        font-size: 18px;
+        text-align: left;
+        margin-right: 24px;
+  
+        span{
+          font-size: 26px;
+        }
+      }
+      
+      .home-login-form{
+        input{
+          width: 240px;
+        }
+  
+        button{
+          @include button-submit-992;
+          margin-left: 10px;
+        }
+      }
+    }
+    #{&}__discover{
+      padding: 60px 230px;
+  
+      .home-discover-title{
+        @include home-title-992;
+      }
+  
+      .home-discover-content{
+        
+        .home-discover-content-images{
+          margin-bottom: 10px;
+        }
+  
+        .home-discover-content-tabs{
+          border-bottom: 1px solid $backgroundColor-gray3;
+          padding: 0 20px;
+          
+          button{
+            padding: 8px 0;
+  
+            &.active{
+              border-bottom: 4px solid $backgroundColor-blue;
+            }
+          }
+        }
+  
+        .home-discover-content-text{
+          padding: 0 30px;
+          .home-discover-content-text-list{
+            p{
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+    #{&}__feedback{
+      padding: 60px 230px;
+  
+      .home-feedback-title{
+        @include home-title-992
+      }
+  
+      .home-feedback-form{
+        &__search{
+          width: 85%;
+  
+          input{
+            height: 36px;
+          }
+        }
+  
+        &__content{
+          margin-top: 20px;
+  
+          .home-feedback-form-content-maps{
+            .vue-map-container{
+              width: 260px;
+              height: 300px;
+            }
+          }
+  
+          .home-feedback-form-content-input{
+            padding: 10px 10px 10px 20px;
+
+            &__list{
+  
+              p{
+                font-size: 18px;
+                margin: 10px;
+              }
+  
+              .home-feedback-form-content-input-list-group{
+  
+                input:nth-child(1){
+                  height: 34px;
+                  width: 40%;
+                  padding: 5px 10px;
+                  margin-right: 8px;
+                }
+  
+                input:nth-child(2){
+                  height: 34px;
+                  padding: 5px 10px;
+                }
+              }
+  
+              input{
+                height: 34px;
+                padding: 5px 10px;
+                margin-bottom: 8px;
+              }
+              textarea{
+                padding: 5px 10px;
+                margin-bottom: 8px;
+              }
+              button{
+                @include button-submit-992;
+              }
+            }
+          }
+  
+        }
+      }
+    }
+  }
+}
+
+// Moto G4, Galaxy S5, Pixel 2, Pixel 2XL, iPhone 5s, iPhone 6/7/8,iPhone X
+@media screen and (max-width: 414px){
+  .home{
+    #{&}__banner{
+      height: 130px;
+      .home-banner-information{
+        margin-left: -75px;
+        width: 80px;
+  
+        &__text{
+          font-size: 6px;
+          margin: 0 0 6px;
+  
+          span{
+            font-size: 8px;
+          }
+        }
+        &__button{
+          padding: 4px 6px;
+          font-size: 7px;
+        }
+      }
+    }
+    #{&}__login{
+      padding: 10px 15px;
+  
+      .home-login-title{
+        font-size: 7px;
+        margin-right: 4px;
+        &__text{
+          margin: 0 0 2px;
+        }
+        span{
+          font-size: 10px;
+        }
+      }
+      
+      .home-login-form{
+        input{
+          width: 74px;
+          height: 19px;
+          font-size: 8px;
+          padding: 4px 8px;
+          margin: 0 4px 0 2px;
+        }
+  
+        button{
+          padding: 4px 8px;
+          font-size: 8px;
+          margin-left: 4px;
+        }
+      }
+    }
+    #{&}__discover{
+      padding: 16px 26px;
+  
+      .home-discover-title{
+        font-size: 8px;
+        margin-bottom: 10px;
+
+        img{
+          width: 18px;
+          margin-bottom: 4px; 
+        }
+        span{
+          margin-bottom: 4px;
+        }
+      }
+  
+      .home-discover-content{
+        
+        .home-discover-content-images{
+          margin-bottom: 6px;
+          img{
+            width: 230px;
+          }
+        }
+        .home-discover-content-tabs{
+          padding: 0 10px;
+          
+          button{
+            padding: 4px 0;
+            margin: 0 4px;
+            font-size: 8px;
+            &.active{
+              border-bottom: 2px solid $backgroundColor-blue;
+            }
+          }
+        }
+  
+        .home-discover-content-text{
+          padding: 0 50px;
+          .home-discover-content-text-list{
+            p{
+              font-size: 8px;
+            }
+          }
+        }
+      }
+    }
+    #{&}__feedback{
+      padding: 16px 26px;
+  
+      .home-feedback-title{
+        font-size: 8px;
+        margin-bottom: 10px;
+
+        img{
+          width: 18px;
+          margin-bottom: 4px; 
+        }
+        span{
+          margin-bottom: 4px;
+        }
+      }
+  
+      .home-feedback-form{
+        &__search{
+          width: 70%;
+  
+          input{
+            height: 18px;
+            padding: 4px 10px 4px 28px;
+            font-size: 9px;
+            background-size: 16px 16px;
+            background-position: 7px;
+          }
+        }
+  
+        &__content{
+          margin-top: 10px;
+  
+          .home-feedback-form-content-maps{
+            .vue-map-container{
+              width: 150px;
+              height: 230px;
+            }
+          }
+  
+          .home-feedback-form-content-input{
+            padding: 6px 6px 6px 10px;
+
+            &__list{
+              
+              p{
+                font-size: 14px;
+                margin: 4px 6px;
+              }
+  
+              .home-feedback-form-content-input-list-group{
+                input:nth-child(1){
+                  height: 22px;
+                  width: 40%;
+                  padding: 4px 8px;
+                  margin-right: 6px;
+                  font-size: 8px;
+                }
+  
+                input:nth-child(2){
+                  height: 22px;
+                  padding: 4px 8px;
+                  font-size: 8px;
+                }
+              }
+  
+              input{
+                height: 22px;
+                padding: 4px 8px;
+                margin-bottom: 6px;
+                font-size: 8px;
+              }
+              textarea{
+                padding: 4px 8px;
+                margin-bottom: 6px;
+                font-size: 8px;
+              }
+              button{
+                padding: 4px 8px;
+                font-size: 8px;
+              }
+            }
+          }
+  
+        }
+      }
+    }
+  }
+}
+// iPad
+@media screen and ( min-width: 415px) and (max-width: 768px){
+  .home{
+    #{&}__banner{
+      height: 280px;
+      .home-banner-information{
+        margin-left: -160px;
+        width: 178px;
+  
+        &__text{
+          font-size: 11px;
+          margin: 0 0 6px;
+  
+          span{
+            font-size: 18px;
+          }
+        }
+        &__button{
+          padding: 8px 12px;
+          font-size: 8px;
+        }
+      }
+    }
+    #{&}__login{
+
+      .home-login-title{
+        font-size: 12px;
+        margin-right: 14px;
+        &__text{
+          margin: 0 0 4px;
+        }
+        span{
+          font-size: 20px;
+        }
+      }
+      
+      .home-login-form{
+        input{
+          width: 190px;
+          height: 30px;
+          font-size: 12px;
+          padding: 6px 10px;
+          margin: 0 8px 0 6px;
+        }
+  
+        button{
+          padding: 6px 10px;
+          font-size: 12px;
+          margin-left: 4px;
+        }
+      }
+    }
+    #{&}__discover{
+      padding: 50px 140px;
+  
+      .home-discover-title{
+        font-size: 12px;
+        margin-bottom: 8px;
+
+        img{
+          width: 26px;
+          margin-bottom: 6px; 
+        }
+        span{
+          margin-bottom: 6px;
+        }
+      }
+  
+      .home-discover-content{
+        
+        .home-discover-content-images{
+          margin-bottom: 8px;
+          img{
+            width: 360px;
+          }
+        }
+        .home-discover-content-tabs{
+          padding: 0 10px;
+          
+          button{
+            padding: 6px 0;
+            margin: 0 12px;
+            font-size: 12px;
+            &.active{
+              border-bottom: 2px solid $backgroundColor-blue;
+            }
+          }
+        }
+  
+        .home-discover-content-text{
+          padding: 0 70px;
+          .home-discover-content-text-list{
+            p{
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+    #{&}__feedback{
+      padding: 50px 140px;
+  
+      .home-feedback-title{
+        font-size: 12px;
+        margin-bottom: 8px;
+
+        img{
+          width: 26px;
+          margin-bottom: 6px; 
+        }
+        span{
+          margin-bottom: 6px;
+        }
+      }
+  
+      .home-feedback-form{
+        &__search{
+          width: 90%;
+  
+          input{
+            height: 26px;
+            padding: 4px 10px 4px 30px;
+            font-size: 12px;
+            background-size: 16px 16px;
+            background-position: 7px;
+          }
+        }
+  
+        &__content{
+          margin-top: 20px;
+  
+          .home-feedback-form-content-maps{
+            .vue-map-container{
+              width: 220px;
+              height: 230px;
+            }
+          }
+  
+          .home-feedback-form-content-input{
+            padding: 8px 8px 8px 18px;
+
+            &__list{
+              
+              p{
+                font-size: 16px;
+                margin: 8px 0;
+              }
+  
+              .home-feedback-form-content-input-list-group{
+                input:nth-child(1){
+                  height: 22px;
+                  width: 40%;
+                  padding: 4px 8px;
+                  margin-right: 6px;
+                  font-size: 8px;
+                }
+  
+                input:nth-child(2){
+                  height: 22px;
+                  padding: 4px 8px;
+                  font-size: 8px;
+                }
+              }
+  
+              input{
+                height: 22px;
+                padding: 4px 8px;
+                margin-bottom: 6px;
+                font-size: 8px;
+              }
+              textarea{
+                padding: 4px 8px;
+                margin-bottom: 6px;
+                font-size: 8px;
+              }
+              button{
+                padding: 4px 8px;
+                font-size: 8px;
+              }
+            }
+          }
+  
+        }
+      }
+    }
+  }
+}

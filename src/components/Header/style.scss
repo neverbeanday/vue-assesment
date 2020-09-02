@@ -1,0 +1,84 @@
+@import "@/assets/scss/index.scss";
+
+
+#header{
+    @include flex-spaceBetween;
+    background-color: $backgroundColor-gray;
+    padding: 0 60px;
+    .logo{
+        width: 80px;
+    }
+    .nav {
+        @include flexRow-center;
+        a {
+          @include navbar-button;
+          &:hover{
+            background-color: $backgroundColor-gray2;
+          }
+          &.router-link-exact-active {
+            background-color: $backgroundColor-gray2;
+          }
+        }
+        img{
+            width: 30px;
+        }
+      }
+}
+
+@media screen and (max-width: 992px) {
+  #header{
+    padding: 0 40px;
+    .logo{
+      width: 70px;
+    }
+    .nav{
+      a {
+        font-size: 15px;
+        padding: 8px 20px;
+        margin: 0 6px 0 0;
+      }
+      img{
+        width: 26px;
+      }
+    }
+  }
+}
+
+// Moto G4, Galaxy S5, Pixel 2, Pixel 2XL, iPhone 5s, iPhone 6/7/8,iPhone X
+@media screen and (max-width: 414px) {
+  #header{
+    padding: 0 5px;
+    .logo{
+      width: 50px;
+    }
+    .nav{
+      a {
+        font-size: 8px;
+        padding: 5px 10px;
+        margin: 0 3px 0 0;
+      }
+      img{
+        width: 10px;
+      }
+    }
+  }
+}
+
+@media screen and ( min-width: 415px) and (max-width: 768px) {
+  #header{
+    padding: 0 20px;
+    .logo{
+      width: 60px;
+    }
+    .nav{
+      a {
+        font-size: 12px;
+        padding: 8px 20px;
+        margin: 0 6px 0 0;
+      }
+      img{
+        width: 22px;
+      }
+    }
+  }
+}

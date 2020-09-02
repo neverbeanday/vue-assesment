@@ -1,0 +1,33 @@
+@import './colors';
+
+@mixin button{
+    outline: 0;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+@mixin button-submit {
+    @include button;
+    background-color: $backgroundColor-blue;
+    color: $textColor-white;
+    border-radius: 4px;
+    padding: 12px 20px;
+    border: 1px solid $backgroundColor-blue;
+
+    &:hover{
+        background-color: $backgroundColor-blue2;
+        border: 1px solid $backgroundColor-blue2;
+    }
+}
+@mixin button-submit-992{
+    padding: 10px 16px;
+    font-size: 12px;
+}
+
+@mixin navbar-button {
+    @include button;
+    color: $textColor-black;
+    border-radius: 20px;
+    padding: 8px 30px;
+    margin: 0 10px;
+}

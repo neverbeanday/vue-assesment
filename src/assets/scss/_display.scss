@@ -1,0 +1,41 @@
+$inlineBlockDisplay : inline-block;
+$blockDisplay: block;
+$flexDisplay: flex;
+$noneDisplay: none;
+
+@mixin flex-spaceBetween {
+    display: $flexDisplay;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flexRow-center{
+    display: $flexDisplay;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flexColumn-center{
+    display: $flexDisplay;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flexColumn-left{
+    display: $flexDisplay;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+@mixin flexColumn {
+    display: $flexDisplay;
+    flex-direction: column;
+}
+
+@mixin flexRow {
+    display: $flexDisplay;
+    flex-direction: row;
+}
